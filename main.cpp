@@ -3,12 +3,18 @@
 
 int main() {
 
-    std::ifstream file;
+    std::ofstream file;
     file.open("../datos.txt");
-    std::string line;
+    std::string text;
+    int counter = 0;
+    std::cout << "\nType something: ";
+    std::cin >> text;
 
-    while(getline(file, line)){
-        std::cout << line << std::endl;
+    while(file << text << " " && counter < 3)
+    {
+        std::cout << "\nType something: ";
+        std::cin >> text;
+        counter++;
     }
 
     return 0;
