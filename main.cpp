@@ -5,12 +5,11 @@ int main() {
 
     std::ifstream file;
     file.open("../datos.txt");
-    std::string word;
+    std::string line;
 
-    while(file >> word){
-        std::cout << word << " ";
+    while(getline(file, line)){
+        std::cout << line << std::endl;
     }
 
     return 0;
 }
-
