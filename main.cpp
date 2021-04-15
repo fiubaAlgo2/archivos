@@ -1,21 +1,17 @@
 #include <iostream>
 #include <fstream>
 
+/*
+ *  ios_base::beg -> Principio del stream
+    ios_base::cur -> Posicion actual del stream
+    ios_base::end -> Final del stream
+ */
 int main() {
 
-    std::ofstream file;
-    file.open("../datos.txt",  std::ios::app);
-    std::string text;
-    int counter = 0;
-    std::cout << "\nType something: ";
-    std::cin >> text;
-
-    while(file << text << " " && counter < 3)
-    {
-        std::cout << "\nType something: ";
-        std::cin >> text;
-        counter++;
-    }
+    std::fstream file;
+    file.open("../datos.txt");
+    file.seekp(3, std::ios::cur);
+    file << "Hello";
 
     return 0;
 }
