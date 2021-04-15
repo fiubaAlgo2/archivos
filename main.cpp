@@ -4,7 +4,7 @@
 int main() {
 
     std::ofstream file;
-    file.open("../datos.txt");
+    file.open("../datos.txt",  std::ios::app);
     std::string text;
     int counter = 0;
     std::cout << "\nType something: ";
